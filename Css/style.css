@@ -32,7 +32,7 @@ ul{
 header{
     position: sticky;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 120px;
     border-bottom-left-radius: 15px;
@@ -43,6 +43,31 @@ header{
 header > img{
     width: 150px;
     max-width: 100%;
+}
+header i{
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+}
+header i.menu{
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    display: none;
+}
+header i.search{
+    background-color: var(--second-color);
+    color: white;
+    border-radius: 50%;
+    display: inline-flex;
+    display: none;
 }
 
 /* nav */
@@ -97,6 +122,7 @@ nav .navControl > i{
     align-items: center;
     margin-left: 12px;
 }
+header .search,
 nav .navControl > i.search{
     background-color: white;
     color: var(--second-color);
@@ -123,6 +149,11 @@ nav .navControl > i.menu{
 nav .navControl > i.menu:hover{
     background-color: white;
     color: var(--main-color);
+}
+@media (max-width: 850px) {
+    nav .navLinks > ul > li > a{
+        font-size: 14px;
+    }
 }
 
 /* Landing */
@@ -173,6 +204,7 @@ nav .navControl > i.menu:hover{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 .landing .landingImageControl .landingCard{
     background-color: rgb(255 255 255 / 50%);
@@ -215,6 +247,61 @@ nav .navControl > i.menu:hover{
     margin: 1.5px;
     text-align: end;
     color: white;
+}
+
+@media (max-width: 1025px) {
+    .landing{
+        height: auto;
+    }
+}
+@media (max-width: 850px) {
+    .landing .landingImageControl{
+        flex-wrap: wrap;
+        margin: 10px;
+    }
+    .landing .landingImageControl .landingCard{
+        margin: 10px;
+    }
+}
+
+@media (max-width: 701px) {
+    .landing .carousel{
+        width: 550px;
+    }
+    nav{
+        display: none;
+    }
+    header i.search, 
+    header i.menu{
+        display: inline-flex;
+    }
+}
+
+@media (max-width: 555px) {
+    .landing .carousel{
+        width: 400px;
+    }
+    .landing .landingImageControl .landingCard{
+        max-width: 100px;
+        height: 150px;
+    }
+    .landing .landingImageControl .landingCard img{
+        max-width: 100px;
+    }
+    .landing .cardDescription h5{
+        width: 60px;
+        font-size: 10px;
+        padding: 2px;
+    }
+    .landing .cardDescription p{
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .landing .carousel{
+        width: 300px;
+    }
 }
 
 /* Choices */
@@ -265,6 +352,10 @@ nav .navControl > i.menu:hover{
     max-width: 350px;
     max-height: 330px;
     padding: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .choices .choicesCard .hoverCard:hover{
     background-color: rgb(255 255 255 / 30%);
@@ -277,8 +368,63 @@ nav .navControl > i.menu:hover{
 }
 .choices .choicesCard .hoverCard p{
     color: white;
+    text-align: center;
 }
 
+@media (max-width: 1025px) {
+    .choices .choicesCard{
+        width: 350px;
+    }
+}
+@media (max-width: 850px) {
+    .choices .choicesCard{
+        width: 275px;
+    }
+}
+@media (max-width: 701px) {
+    .choices .choicesCard{
+        width: 200px;
+    }
+}
+@media (max-width: 555px) {
+    .choices .choicesCard{
+        width: 180px;
+    }
+    .choices .choicesCard .hoverCard img{
+        width: 200px;
+    }
+    .container hr{
+        right: 20px;
+    }
+}
+@media (max-width: 450px) {
+    .choices .choicesCard{
+        width: 150px;
+    }
+    .choices .choicesCard .hoverCard img{
+        width: 160px;
+    }
+}
+@media (max-width: 405px) {
+    .choices .choicesCard{
+        width: 150px;
+    }
+    .choices .choicesCard .hoverCard img{
+        width: 160px;
+    }
+}
+@media (max-width: 395px) {
+    .choices .choicesCard{
+        width: 130px;
+        margin-bottom: 65px;       
+    }
+    .choices .choicesCard .hoverCard{
+        margin-top: 30px;
+    }
+    .choices .choicesCard .hoverCard img{
+        width: 140px;
+    }
+}
 /* Info */
 .info{
     margin-top: 50px;
@@ -358,6 +504,70 @@ nav .navControl > i.menu:hover{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+}
+@media (max-width: 1025px) {
+    .info .infoCard{
+        width: 250px;
+    }
+    .info .infoCard img{
+        width: 250px;
+        height: auto;
+    }
+}
+@media (max-width: 850px) {
+    .info .infoCard{
+        width: 180px;
+    }
+    .info .infoCard img{
+        width: 180px;
+        height: auto;
+    }
+    .info .leftCard .leftBox{
+        flex-direction: column;
+    }
+    .info .leftCard .leftBox .leftBoxDescription{
+        margin-top: 5px;
+    }
+}
+@media (max-width: 701px) {
+    .info .leftCard .leftBox {
+        flex-direction: row-reverse;
+    }
+    .info .infoCard{
+        width: 240px;
+    }
+    .info .infoCard img{
+        width: 240px;
+        height: auto;
+    }
+}
+@media (max-width: 500px) {
+    .info .infoCard{
+        width: 210px;
+    }
+    .info .infoCard img{
+        width: 210px;
+    }
+}
+@media (max-width: 455px) {
+    .info .infoCard{
+        width: 180px;
+    }
+    .info .infoCard img{
+        width: 180px;
+    }
+}
+@media (max-width: 420px) {
+    .info .infoCard{
+        width: 150px;
+    }
+    .info .infoCard img{
+        width: 150px;
+    }
+    .info .sectionTitle{
+        width: 80px;
+        font-size: 12px;
+    }
 }
 
 /* Footer */
